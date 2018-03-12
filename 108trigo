@@ -18,14 +18,40 @@ def print_matrice(matrix):
 			x = x + 1
 		j = j + 1
 
-if __name__ == "__main__":
+def display_help():
+	print("USAGE")
+	print("\t\t./108trigo fun a0 a1 a2....")
+	print()
+	print("DESCRIPTION")
+	print("\t\tfun	function to be applied, among at least \"EXP\", \"COS\", \"SIN\", \"COSH\" and \"SINH\"")
+	print("\t\tai	coeficients of the matrix")
+
+def verification_argument():
+	i = 2
+	if len(sys.argv) == 2 and sys.argv[1] == "-h":
+		display_help()
+		return (-1)
 	try:
 		a = int(sqrt(len(sys.argv) - 2))
-		a == sqrt(len(sys.argv) - 2)
+		assert a == sqrt(len(sys.argv) - 2)
+		assert len(sys.argv) > 2
 	except:
-		print ("Error number argument")
+		return (0)
+	while i != len(sys.argv):
+		try:
+			float(sys.argv[i])
+		except:
+			return (0)
+		i = i + 1
+	return (a)
+
+if __name__ == "__main__":
+	a = verification_argument()
+	if a == 0:
 		print("retry with -h")
 		sys.exit(84)
+	if a == -1:
+		sys.exit(0)
 	matrix = Square_Matrix(a, sys.argv[2:])
 	if sys.argv[1] == "COS":
 		matrix = cosinus(matrix)

@@ -15,11 +15,27 @@ def cosinus(matrix):
 		i = i + 1
 	return (tmp)
 
+def cosinus_hyperbolique(matrix):
+	i = 0
+	tmp = Square_Matrix(matrix.size, [0] * matrix.size)
+	while i != 17:
+		tmp = tmp + ((matrix ** (2 * i)) / factorielle(2 * i))
+		i = i + 1
+	return (tmp)
+
 def sinus(matrix):
 	i = 0
 	tmp = Square_Matrix(matrix.size, [0] * matrix.size)
 	while i != 17:
 		tmp = tmp + (pow(-1, i) * (matrix ** ((2 * i) + 1)) / factorielle((2 * i) + 1))
+		i = i + 1
+	return (tmp)
+
+def sinus_hyperbolique(matrix):
+	i = 0
+	tmp = Square_Matrix(matrix.size, [0] * matrix.size)
+	while i != 17:
+		tmp = tmp + ((matrix ** ((2 * i) + 1)) / factorielle((2 * i) + 1))
 		i = i + 1
 	return (tmp)
 

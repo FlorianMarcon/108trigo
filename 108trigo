@@ -24,6 +24,7 @@ if __name__ == "__main__":
 		a == sqrt(len(sys.argv) - 2)
 	except:
 		print ("Error number argument")
+		print("retry with -h")
 		sys.exit(84)
 	matrix = Square_Matrix(a, sys.argv[2:])
 	if sys.argv[1] == "COS":
@@ -32,6 +33,12 @@ if __name__ == "__main__":
 		matrix = exponentielle(matrix)
 	elif sys.argv[1] == "SIN":
 		matrix = sinus(matrix)
+	elif sys.argv[1] == "COSH":
+		matrix = cosinus_hyperbolique(matrix)
+	elif sys.argv[1] == "SINH":
+		matrix = sinus_hyperbolique(matrix)
 	else:
 		print("retry with -h")
+		sys.exit(84)
 	print_matrice(matrix)
+	sys.exit(0)

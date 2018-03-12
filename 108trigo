@@ -3,21 +3,7 @@
 from math import sqrt
 import sys
 from matrix import Square_Matrix
-
-def factorielle(nb):
-	a = 1
-	while nb != 0:
-		a = a * nb
-		nb = nb - 1
-	return (a)
-
-def cosinus(matrix):
-	i = 0
-	tmp = Square_Matrix(matrix.size, [0] * matrix.size)
-	while i != 17:
-		tmp = tmp + (pow(-1, i) * (matrix ** (2 * i)) / factorielle(2 * i))
-		i = i + 1
-	return (tmp)
+from function import *
 
 def print_matrice(matrix):
 	j = 0
@@ -42,4 +28,10 @@ if __name__ == "__main__":
 	matrix = Square_Matrix(a, sys.argv[2:])
 	if sys.argv[1] == "COS":
 		matrix = cosinus(matrix)
+	elif sys.argv[1] == "EXP":
+		matrix = exponentielle(matrix)
+	elif sys.argv[1] == "SIN":
+		matrix = sinus(matrix)
+	else:
+		print("retry with -h")
 	print_matrice(matrix)

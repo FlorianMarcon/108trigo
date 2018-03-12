@@ -36,7 +36,7 @@ class Square_Matrix:
 		return (matrix)
 
 	def define_matrice_identity(self):
-		matrice = Square_Matrix(self.size, {0, 0})
+		matrice = Square_Matrix(self.size, [0] * self.size)
 		i = 0
 		while i != matrice.size:
 			matrice.matrice[i][i] = 1

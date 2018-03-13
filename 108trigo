@@ -12,9 +12,9 @@ def print_matrice(matrix):
 		x = 0
 		while x != matrix.size:
 			if x != matrix.size - 1:
-				print("%.2f" % matrix.matrice[j][x], "	", end = "")
+				print("%.2f" % round(matrix.matrice[j][x], 2), "	", end = "")
 			else:
-				print("%.2f" % matrix.matrice[j][x])
+				print("%.2f" % round(matrix.matrice[j][x], 2))
 			x = x + 1
 		j = j + 1
 
